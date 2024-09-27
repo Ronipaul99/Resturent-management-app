@@ -1,23 +1,27 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import {Link} from 'react-router-dom'
 import '../css/Navbar.css'; // Import the CSS file for styling
-
+import { LoginContext } from '../LoginContext';
 const Navbar = () => {
+ const {openLogin, setopenLogin} = useContext(LoginContext)
   return (
     <nav className="navbar">
       <div className="navbar-logo">
-        <img src="/logo.png" alt="Zomato" />
+        <Link to='/'>
+          <img src="/logo.png" alt="brand Image" />
+        </Link>
       </div>
       <div className="navbar-search">
         <input type="text" placeholder="Search for restaurants, cuisine or a dish" />
       </div>
       <div className="navbar-links">
-        <a href="#order-online">Order Online</a>
-        <a href="#dining-out">Dining Out</a>
-        <a href="#pro">Zomato Pro</a>
-        <a href="#offers">Offers</a>
+        <Link to="#order-online">Order Online</Link>
+        <Link to="#dining-out">Dining Out</Link>
+        <Link to="#pro">Zomato Pro</Link>
+        <Link to="#offers">Offers</Link>
       </div>
       <div className="navbar-profile">
-        <a href="#login">Login</a>
+        <a className='login' onClick={()=>{setopenLogin(!openLogin)}}>Login</a>
         <a href="#signup" className="signup">Sign Up</a>
       </div>
     </nav>

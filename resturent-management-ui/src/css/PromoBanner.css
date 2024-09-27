@@ -1,0 +1,17 @@
+.banner-content {
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .carousel-item {
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .text-light {
+    color: white !important;
+  }
+  
